@@ -1,6 +1,7 @@
 import { AppShowcase } from "@/components/app-showcase";
 import { FeaturesSection } from "@/components/features-section";
 import { HeroSection } from "@/components/hero-section";
+import StoriesSection from "@/components/storage-section";
 
 
 export default function Home() {
@@ -9,6 +10,7 @@ export default function Home() {
       <HeroSection />
       <AppShowcase />
       <FeaturesSection />
+      <StoriesSection />
     </main>
   )
 }

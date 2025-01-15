@@ -84,3 +84,33 @@ body {
     backface-visibility: hidden;
   }
 }
+
+@keyframes scroll-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-left {
+  from {
+    transform: translateX(-50%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll-right {
+  animation: scroll-right 30s linear infinite;
+}
+
+.animate-scroll-left {
+  animation: scroll-left 30s linear infinite;
+}
+
+.pause-animation {
+  animation-play-state: paused;
+}

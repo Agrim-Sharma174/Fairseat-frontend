@@ -30,7 +30,7 @@ export function TicketCard({ title, venue, date, time, gate, isCenter }: TicketC
           )}>
             <div className="space-y-2">
               <h3 className="font-semibold text-lg text-white">{title}</h3>
-              <p className="text-sm text-white/70">{venue}</p>
+              <p className="text-sm text-white/70">{venue}</p>d
             </div>
             <div className="space-y-4">
               <div className="space-y-1">
