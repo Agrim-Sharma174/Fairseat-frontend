@@ -1,33 +1,35 @@
-import { Wallet } from 'lucide-react'
-import { Card, CardContent } from "@/components/ui/card"
+import { LucideIcon } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
 
-export default function TicketCard() {
+interface TicketCardProps {
+  icon: LucideIcon;
+  title: string;
+  description: string;
+}
+
+export default function TicketCard({ icon: Icon, title, description }: TicketCardProps) {
   return (
-    <Card className="relative w-[280px] h-[400px] bg-zinc-800 border-none overflow-hidden">
+    <Card className="relative w-[271px] h-[330px] rounded-[16px] bg-gray-500/30 border-none overflow-hidden">
       {/* Background circles */}
-      <div className="absolute top-[-100px] left-[-100px]">
-        <div className="w-[300px] h-[300px] rounded-full bg-zinc-700/30" />
-        <div className="absolute top-[20px] left-[20px] w-[300px] h-[300px] rounded-full bg-zinc-700/20" />
+      <div className="absolute top-[-135px] left-[-135px]">
+        <div className="w-[341px] h-[341px] rounded-full bg-gray-700/20" />
+        <div className="absolute top-[7px] left-[7px] w-[300px] h-[300px] rounded-full bg-gray-700/20" />
       </div>
-      
+
       {/* Content */}
       <CardContent className="relative h-full flex flex-col p-6">
-        <div className="w-12 h-12 rounded-full bg-cyan-400 flex items-center justify-center">
-          <Wallet className="w-6 h-6 text-zinc-800" />
+        <div className="w-12 h-12 rounded-full bg-[#60C9DD] flex items-center justify-center">
+          <Icon className="w-6 h-6 text-white" />
         </div>
-        
+
         <div className="mt-auto mb-8">
-          <h3 className="text-2xl font-mono text-white font-medium leading-tight mb-4">
-            Bot-Free
-            <br />
-            Ticketing
+          <h3 className="text-lg font-mono text-white font-medium leading-tight mb-2">
+            {title}
           </h3>
-          <p className="text-zinc-300 text-sm leading-relaxed">
-            Ensure real fans always get the tickets they genuinely deserve, not bots or scalpers.
-          </p>
+          <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
         </div>
       </CardContent>
     </Card>
-  )
+  );
 }
 

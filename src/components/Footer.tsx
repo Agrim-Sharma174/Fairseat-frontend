@@ -1,5 +1,8 @@
-import { Button } from "@/components/ui/button"
-import { Tent, Instagram, Linkedin, Facebook, Twitter } from 'lucide-react'
+import { Button } from "@/components/ui/button";
+import { Tent, Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
+import logo from "../../public/Logo.svg";
+import logoLayer from "../../public/logolayer.svg";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -16,7 +19,7 @@ export default function Footer() {
               </span>
             </div>
           </div>
-          <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-6">
+          <Button className="bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6">
             Contact Today!
           </Button>
         </div>
@@ -27,16 +30,21 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Newsletter */}
           <div className="space-y-8">
-            <div className="flex items-center text-2xl font-bold">
-              <span className="text-cyan-500">Fair</span>
-              <span>Seat</span>
+            <div className="flex gap-2 items-center">
+              <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
+              <Image
+                src={logoLayer}
+                alt="FairSeat Logo"
+                width={120}
+                height={30}
+              />
             </div>
             <div>
               <h3 className="text-xl font-medium mb-2">Stay Updated!</h3>
               <p className="text-gray-400 mb-4">
                 Join our community for the latest events and offers.
               </p>
-              <Button className="bg-cyan-500 hover:bg-cyan-600 text-white rounded-full px-8">
+              <Button className="bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8">
                 Join
               </Button>
             </div>
@@ -48,7 +56,10 @@ export default function Footer() {
             <ul className="space-y-3">
               {["Home", "Events", "Features", "Stories", "FAQs"].map((item) => (
                 <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
+                  <a
+                    href="#"
+                    className="text-gray-400 hover:text-white transition-colors"
+                  >
                     {item}
                   </a>
                 </li>
@@ -60,13 +71,18 @@ export default function Footer() {
           <div>
             <h3 className="text-xl font-medium mb-6">Legal</h3>
             <ul className="space-y-3">
-              {["Privacy Policy", "Terms of Service", "Refund Policy"].map((item) => (
-                <li key={item}>
-                  <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                    {item}
-                  </a>
-                </li>
-              ))}
+              {["Privacy Policy", "Terms of Service", "Refund Policy"].map(
+                (item) => (
+                  <li key={item}>
+                    <a
+                      href="#"
+                      className="text-gray-400 hover:text-white transition-colors"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
 
@@ -81,8 +97,8 @@ export default function Footer() {
                 { name: "Twitter", icon: Twitter },
               ].map((item) => (
                 <li key={item.name}>
-                  <a 
-                    href="#" 
+                  <a
+                    href="#"
                     className="text-gray-400 hover:text-white transition-colors flex items-center gap-2"
                   >
                     <item.icon className="w-5 h-5" />
@@ -99,28 +115,31 @@ export default function Footer() {
       <div className="border-t border-gray-800">
         <div className="max-w-7xl mx-auto px-4 py-8">
           <div className="flex flex-col items-center gap-6">
-            <div className="flex items-center text-2xl font-bold">
-              <span className="text-cyan-500">Fair</span>
-              <span>Seat</span>
-            </div>
+            <Image
+              src={logoLayer}
+              alt="FairSeat Logo"
+              width={120}
+              height={30}
+            />
             <div className="flex gap-6">
               {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
-                <a 
+                <a
                   key={index}
-                  href="#" 
+                  href="#"
                   className="text-gray-400 hover:text-white transition-colors"
                 >
                   <Icon className="w-5 h-5" />
                 </a>
               ))}
             </div>
-            <p className="text-sm text-gray-400 text-center">
-              © 2025 FairSeat. All rights reserved. The content, trademarks, and intellectual property on this platform are owned by FairSeat and are protected under applicable copyright laws.
+            <p className="text-sm text-[#FFFFFFB2] text-center">
+              © 2025 FairSeat. All rights reserved. The content, trademarks, and
+              intellectual property on this platform are owned by FairSeat and
+              are protected under applicable copyright laws.
             </p>
           </div>
         </div>
       </div>
     </footer>
-  )
+  );
 }
-
