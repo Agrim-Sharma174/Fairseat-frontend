@@ -6,10 +6,10 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1d1f] text-white">
+    <footer className="bg-[#161C21] text-white">
       {/* Top Banner */}
-      <div className="bg-[#1c2124] py-4">
-        <div className="max-w-7xl mx-auto px-4 flex items-center justify-between">
+      <div className="bg-[#242E38] py-4">
+        <div className="container mx-auto px-4 flex items-center justify-between">
           <div className="flex items-center gap-3">
             <Tent className="w-6 h-6" />
             <div>
@@ -26,7 +26,7 @@ export default function Footer() {
       </div>
 
       {/* Main Footer Content */}
-      <div className="max-w-7xl mx-auto px-4 py-16">
+      <div className="container mx-auto px-4 py-16">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           {/* Logo and Newsletter */}
           <div className="space-y-8">
@@ -112,34 +112,38 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      <div className="border-t border-gray-800">
-        <div className="max-w-7xl mx-auto px-4 py-8">
-          <div className="flex flex-col items-center gap-6">
-            <Image
-              src={logoLayer}
-              alt="FairSeat Logo"
-              width={120}
-              height={30}
-            />
-            <div className="flex gap-6">
-              {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
-                <a
-                  key={index}
-                  href="#"
-                  className="text-gray-400 hover:text-white transition-colors"
-                >
-                  <Icon className="w-5 h-5" />
-                </a>
-              ))}
-            </div>
-            <p className="text-sm text-[#FFFFFFB2] text-center">
-              © 2025 FairSeat. All rights reserved. The content, trademarks, and
-              intellectual property on this platform are owned by FairSeat and
-              are protected under applicable copyright laws.
-            </p>
+      {/* <div className="border-t border-gray-800"> */}
+      <div className="max-w-7xl mx-auto px-4 py-8">
+        <div className="relative flex flex-col items-center gap-6">
+          {/* <div className="absolute top-3 w-full h-1 bg-black"></div> */}
+          <hr className="w-5/12 absolute left-0 top-3" />
+          <Image
+            src={logoLayer}
+            alt="FairSeat Logo"
+            width={120}
+            height={30}
+            className="z-[90]"
+          />
+          <hr className="w-5/12 absolute right-0 top-3" />
+          <div className="flex gap-6">
+            {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
+              <a
+                key={index}
+                href="#"
+                className="text-gray-400 hover:text-white transition-colors"
+              >
+                <Icon className="w-5 h-5" />
+              </a>
+            ))}
           </div>
+          <p className="text-sm text-[#FFFFFFB2] text-center">
+            © 2025 FairSeat. All rights reserved. The content, trademarks, and
+            intellectual property on this platform are owned by FairSeat and are
+            protected under applicable copyright laws.
+          </p>
         </div>
       </div>
+      {/* </div> */}
     </footer>
   );
 }

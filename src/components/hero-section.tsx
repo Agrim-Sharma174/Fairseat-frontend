@@ -5,9 +5,9 @@ import logoLayer from "../../public/logolayer.svg";
 
 export function HeroSection() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-teal-950 to-gray-950 overflow-x-hidden">
+    <div className="min-h-screen overflow-x-hidden">
       {/* Navigation */}
-      <nav className="fixed top-0 left-0 w-full mx-auto px-12 py-6 z-[100] flex items-center justify-between bg-gray-500/10 backdrop-blur-3xl">
+      <nav className="fixed top-0 left-0 w-full mx-auto px-12 py-4 z-[100] flex items-center justify-between bg-gray-500/10 backdrop-blur-3xl">
         <div className="flex gap-2 items-center">
           <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
           <Image src={logoLayer} alt="FairSeat Logo" width={120} height={30} />
@@ -42,7 +42,7 @@ export function HeroSection() {
             blockchain technology to ensure transparent, secure, and fair ticket
             booking, so every true fan gets a fair chance.
           </p>
-          <button className="rounded-full bg-teal-600 px-8 py-3 text-lg font-medium text-white hover:bg-teal-500 transition-all">
+          <button className="rounded-full bg-[#0497AA] px-8 py-3 text-lg font-medium text-white hover:bg-cyan-500 transition-all">
             Join Our Community
           </button>
         </div>

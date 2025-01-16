@@ -30,7 +30,7 @@ const features = [
 
 export function FeaturesSection() {
   return (
-    <section className="py-24 bg-gray-950">
+    <section className="py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-12">
           <span className="px-4 py-1 text-sm rounded-full bg-white/60 w-fit">
@@ -41,7 +41,7 @@ export function FeaturesSection() {
           </h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mx-auto">
           {features.map((feature, index) => (
             <TicketCard
               key={index}

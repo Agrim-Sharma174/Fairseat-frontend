@@ -43,8 +43,8 @@ export default function StoriesSection() {
   const doubledStories = [...STORIES, ...STORIES]
 
   return (
-    <div className="min-h-screen bg-[#001a1a] text-white py-16 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4">
+    <div className="min-h-screen text-white py-16 overflow-hidden">
+      <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-12">
           <span className="px-4 py-1 text-sm rounded-full bg-white/10 w-fit">Stories</span>
           <h2 className="text-4xl font-medium">Share your Stories</h2>

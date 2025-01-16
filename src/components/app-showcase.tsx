@@ -5,7 +5,7 @@ import iphone3 from "../../public/iphone 16 _ portrait 1.png";
 
 export function AppShowcase() {
   return (
-    <section className="py-32 bg-gradient-to-b from-gray-950 to-teal-950">
+    <section className="py-32 pt-0">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-bold text-white text-center mb-20">
           Be Prepared To Have Fun
