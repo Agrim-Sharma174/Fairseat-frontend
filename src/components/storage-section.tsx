@@ -1,12 +1,12 @@
-'use client'
+"use client";
 
-import { useEffect, useState } from 'react'
+import { useEffect, useState } from "react";
 
 interface Story {
-  id: number
-  name: string
-  avatar: string
-  content: string
+  id: number;
+  name: string;
+  avatar: string;
+  content: string;
 }
 
 const STORIES: Story[] = [
@@ -14,27 +14,31 @@ const STORIES: Story[] = [
     id: 1,
     name: "Deepak Sharma",
     avatar: "/placeholder.svg?height=40&width=40",
-    content: "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra."
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
   },
   {
     id: 2,
     name: "Rishi Jain",
     avatar: "/placeholder.svg?height=40&width=40",
-    content: "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra."
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
   },
   {
     id: 3,
     name: "Priya Gupta",
     avatar: "/placeholder.svg?height=40&width=40",
-    content: "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra."
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
   },
   {
     id: 4,
     name: "Sonali Shah",
     avatar: "/placeholder.svg?height=40&width=40",
-    content: "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra."
-  }
-]
+    content:
+      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
+  },
+];
 
 export default function StoriesSection() {
   const [isHovered, setIsHovered] = useState(false);
@@ -44,8 +48,12 @@ export default function StoriesSection() {
     <div className="min-h-screen text-white py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/10 w-fit">Stories</span>
-          <h2 className="text-3xl sm:text-4xl font-medium">Share your Stories</h2>
+          <span className="px-4 py-1 text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit">
+            Stories
+          </span>
+          <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
+          <span className="text-white">Share your</span> Stories
+          </h2>
         </div>
 
         <div
@@ -55,7 +63,11 @@ export default function StoriesSection() {
         >
           {/* Responsive story cards */}
           <div className="relative">
-            <div className={`flex gap-4 sm:gap-6 animate-scroll-right ${isHovered ? 'pause-animation' : ''}`}>
+            <div
+              className={`flex gap-4 sm:gap-6 animate-scroll-right ${
+                isHovered ? "pause-animation" : ""
+              }`}
+            >
               {doubledStories.map((story, idx) => (
                 <StoryCard
                   key={`${story.id}-${idx}-top`}
@@ -67,7 +79,11 @@ export default function StoriesSection() {
           </div>
 
           <div className="relative">
-            <div className={`flex gap-4 sm:gap-6 animate-scroll-left ${isHovered ? 'pause-animation' : ''}`}>
+            <div
+              className={`flex gap-4 sm:gap-6 animate-scroll-left ${
+                isHovered ? "pause-animation" : ""
+              }`}
+            >
               {doubledStories.map((story, idx) => (
                 <StoryCard
                   key={`${story.id}-${idx}-bottom`}
@@ -96,6 +112,5 @@ function StoryCard({ name, avatar, content }: Story) {
       </div>
       <p className="text-sm text-gray-300 leading-relaxed">{content}</p>
     </div>
-  )
+  );
 }
-

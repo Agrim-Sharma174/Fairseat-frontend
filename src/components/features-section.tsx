@@ -33,11 +33,11 @@ export function FeaturesSection() {
     <section className="py-16 sm:py-20 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
-          <span className="px-4 py-1 text-sm rounded-full bg-white/60 w-fit">
+          <span className="px-4 py-1 text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit">
             Our features
           </span>
-          <h2 className="text-3xl sm:text-4xl text-white font-medium">
-            Explore Features Of Our Solution
+          <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
+          <span className="text-white">Explore Features</span> Of Our Solution
           </h2>
         </div>
         <div className="flex justify-center sm:block">

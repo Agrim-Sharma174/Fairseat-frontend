@@ -36,7 +36,7 @@ export default function Footer() {
             </div>
             <div>
               <h3 className="text-xl font-medium mb-2">Stay Updated!</h3>
-              <p className="text-gray-400 mb-4">
+              <p className="text-[#FFFFFFB2] mb-4 font-raleway">
                 Join our community for the latest events and offers.
               </p>
               <Button className="bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8 w-full sm:w-auto">
