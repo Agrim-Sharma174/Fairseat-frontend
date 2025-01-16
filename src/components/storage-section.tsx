@@ -37,45 +37,50 @@ const STORIES: Story[] = [
 ]
 
 export default function StoriesSection() {
-  const [isHovered, setIsHovered] = useState(false)
-  
-  // Double the stories array for seamless infinite scroll
-  const doubledStories = [...STORIES, ...STORIES]
+  const [isHovered, setIsHovered] = useState(false);
+  const doubledStories = [...STORIES, ...STORIES];
 
   return (
-    <div className="min-h-screen text-white py-16 overflow-hidden">
+    <div className="min-h-screen text-white py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
-        <div className="flex flex-col items-left gap-2 mb-12">
+        <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
           <span className="px-4 py-1 text-sm rounded-full bg-white/10 w-fit">Stories</span>
-          <h2 className="text-4xl font-medium">Share your Stories</h2>
+          <h2 className="text-3xl sm:text-4xl font-medium">Share your Stories</h2>
         </div>
 
-        <div 
-          className="space-y-8"
+        <div
+          className="space-y-6 sm:space-y-8"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
         >
-          {/* Top row - moving right */}
+          {/* Responsive story cards */}
           <div className="relative">
-            <div className={`flex gap-6 animate-scroll-right ${isHovered ? 'pause-animation' : ''}`}>
+            <div className={`flex gap-4 sm:gap-6 animate-scroll-right ${isHovered ? 'pause-animation' : ''}`}>
               {doubledStories.map((story, idx) => (
-                <StoryCard key={`${story.id}-${idx}-top`} {...story} />
+                <StoryCard
+                  key={`${story.id}-${idx}-top`}
+                  {...story}
+                  // className="w-[280px] sm:w-[300px]"
+                />
               ))}
             </div>
           </div>
 
-          {/* Bottom row - moving left */}
           <div className="relative">
-            <div className={`flex gap-6 animate-scroll-left ${isHovered ? 'pause-animation' : ''}`}>
+            <div className={`flex gap-4 sm:gap-6 animate-scroll-left ${isHovered ? 'pause-animation' : ''}`}>
               {doubledStories.map((story, idx) => (
-                <StoryCard key={`${story.id}-${idx}-bottom`} {...story} />
+                <StoryCard
+                  key={`${story.id}-${idx}-bottom`}
+                  {...story}
+                  // className="w-[280px] sm:w-[300px]"
+                />
               ))}
             </div>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 function StoryCard({ name, avatar, content }: Story) {

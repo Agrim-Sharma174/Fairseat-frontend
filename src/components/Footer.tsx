@@ -7,10 +7,10 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#161C21] text-white">
-      {/* Top Banner */}
+      {/* Responsive Top Banner */}
       <div className="bg-[#242E38] py-4">
-        <div className="container mx-auto px-4 flex items-center justify-between">
-          <div className="flex items-center gap-3">
+        <div className="container mx-auto px-4 flex flex-col sm:flex-row items-center justify-between gap-4 sm:gap-0">
+          <div className="flex items-center gap-3 text-center sm:text-left">
             <Tent className="w-6 h-6" />
             <div>
               <span className="font-medium">List your show</span>
@@ -19,32 +19,27 @@ export default function Footer() {
               </span>
             </div>
           </div>
-          <Button className="bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6">
+          <Button className="bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto">
             Contact Today!
           </Button>
         </div>
       </div>
 
-      {/* Main Footer Content */}
-      <div className="container mx-auto px-4 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
+      {/* Responsive Main Footer Content */}
+      <div className="container mx-auto px-4 py-12 sm:py-16">
+        <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Logo and Newsletter */}
-          <div className="space-y-8">
-            <div className="flex gap-2 items-center">
+          <div className="space-y-6 sm:space-y-8 text-center sm:text-left col-span-2 sm:col-span-1">
+            <div className="flex gap-2 items-center justify-center sm:justify-start">
               <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
-              <Image
-                src={logoLayer}
-                alt="FairSeat Logo"
-                width={120}
-                height={30}
-              />
+              <Image src={logoLayer} alt="FairSeat Logo" width={120} height={30} />
             </div>
             <div>
               <h3 className="text-xl font-medium mb-2">Stay Updated!</h3>
               <p className="text-gray-400 mb-4">
                 Join our community for the latest events and offers.
               </p>
-              <Button className="bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8">
+              <Button className="bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8 w-full sm:w-auto">
                 Join
               </Button>
             </div>
@@ -112,11 +107,9 @@ export default function Footer() {
       </div>
 
       {/* Bottom Section */}
-      {/* <div className="border-t border-gray-800"> */}
-      <div className="max-w-7xl mx-auto px-4 py-8">
-        <div className="relative flex flex-col items-center gap-6">
-          {/* <div className="absolute top-3 w-full h-1 bg-black"></div> */}
-          <hr className="w-5/12 absolute left-0 top-3" />
+      <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
+        <div className="relative flex flex-col items-center gap-4 sm:gap-6">
+          <hr className="w-4/12 sm:w-5/12 absolute left-0 top-3" />
           <Image
             src={logoLayer}
             alt="FairSeat Logo"
@@ -124,26 +117,25 @@ export default function Footer() {
             height={30}
             className="z-[90]"
           />
-          <hr className="w-5/12 absolute right-0 top-3" />
-          <div className="flex gap-6">
-            {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
+          <hr className="w-4/12 sm:w-5/12 absolute right-0 top-3" />
+          <div className="flex gap-4 sm:gap-6">
+          {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
               <a
                 key={index}
                 href="#"
                 className="text-gray-400 hover:text-white transition-colors"
               >
-                <Icon className="w-5 h-5" />
+                <Icon className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             ))}
           </div>
-          <p className="text-sm text-[#FFFFFFB2] text-center">
+          <p className="text-xs sm:text-sm text-[#FFFFFFB2] text-center">
             © 2025 FairSeat. All rights reserved. The content, trademarks, and
             intellectual property on this platform are owned by FairSeat and are
             protected under applicable copyright laws.
           </p>
         </div>
       </div>
-      {/* </div> */}
     </footer>
   );
 }
