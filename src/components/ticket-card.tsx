@@ -1,91 +1,103 @@
 'use client'
 
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+import Image from "next/image"
+import frontTic from "../../public/ticket front.png"
+import backTic from "../../public/ticket back.png"
 
 interface TicketCardProps {
-  title: string
-  venue: string
-  date: string
-  time: string
-  gate: string
-  isCenter?: boolean
+  type: 'center' | 'left' | 'right' | 'leftExt' | 'rightExt'
 }
 
-export function TicketCard({ title, venue, date, time, gate, isCenter }: TicketCardProps) {
-  return (
-    <div 
-      className={cn(
-        "relative group perspective-1000",
-        isCenter ? "w-[300px] h-[400px]" : "w-[250px] h-[350px]"
-      )}
-    >
-      <div className="relative preserve-3d duration-500 group-hover:[transform:rotateY(180deg)] w-full h-full">
-        {/* Front of the ticket */}
-        <div className="absolute backface-hidden w-full h-full">
-          <div className={cn(
-            "w-full h-full p-6 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10",
-            "flex flex-col justify-between",
-            isCenter ? "shadow-2xl shadow-teal-500/20" : ""
-          )}>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-lg text-white">{title}</h3>
-              <p className="text-sm text-white/70">{venue}</p>d
-            </div>
-            <div className="space-y-4">
-              <div className="space-y-1">
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/50">Date</span>
-                  <span className="text-white">{date}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/50">Time</span>
-                  <span className="text-white">{time}</span>
-                </div>
-                <div className="flex justify-between text-sm">
-                  <span className="text-white/50">Gate</span>
-                  <span className="text-white">{gate}</span>
-                </div>
-              </div>
-              <Button variant="outline" className="w-full bg-teal-500/10 border-teal-500/20 text-teal-500 hover:bg-teal-500/20">
-                Buy Ticket
-              </Button>
-            </div>
+export function TicketCard({ type }: TicketCardProps) {
+  // Define width and height based on type
+  const width = 296
+  const height = 366
+
+  // Calculate transform and opacity based on type
+  const transforms = {
+    leftExt: 'translateX(0%) scale(0.85) rotateY(35deg)',
+    left: 'translateX(-8%) scale(0.9) rotateY(25deg)',
+    center: 'scale(1)',
+    right: 'translateX(8%) scale(0.9) rotateY(-25deg)',
+    rightExt: 'translateX(0%) scale(0.85) rotateY(-35deg)'
+  }
+
+  const opacities = {
+    leftExt: '0.3',
+    left: '0.6',
+    center: '1',
+    right: '0.6',
+    rightExt: '0.3'
+  }
+
+  if (type === 'center') {
+    return (
+      <div 
+        className="relative group h-full"
+        style={{ 
+          width,
+          height,
+          transform: transforms[type],
+          transition: 'all 0.5s ease-in-out',
+          zIndex: 50
+        }}
+      >
+        <div className="relative preserve-3d duration-500 group-hover:[transform:rotateY(180deg)] w-[296px] h-[366px]">
+          {/* Front of the center ticket */}
+          <div className="absolute backface-hidden w-full h-full">
+            <Image
+              src={frontTic || "/placeholder.svg"}
+              alt="Ticket Front"
+              width={width}
+              height={height}
+              className="w-full h-full object-cover rounded-xl shadow-2xl"
+            />
           </div>
-        </div>
-        
-        {/* Back of the ticket */}
-        <div className="absolute backface-hidden w-full h-full [transform:rotateY(180deg)]">
-          <div className={cn(
-            "w-full h-full p-6 rounded-xl bg-black/40 backdrop-blur-sm border border-white/10",
-            "flex flex-col justify-between",
-            isCenter ? "shadow-2xl shadow-teal-500/20" : ""
-          )}>
-            <div className="space-y-2">
-              <h3 className="font-semibold text-lg text-white">Event Details</h3>
-              <div className="space-y-4">
-                <p className="text-sm text-white/70">
-                  Join us for an unforgettable night of music and entertainment. Early arrival is recommended.
-                </p>
-                <div className="space-y-2">
-                  <div className="text-sm text-white/70">
-                    <span className="text-white">Location:</span> {venue}
-                  </div>
-                  <div className="text-sm text-white/70">
-                    <span className="text-white">Duration:</span> 3 hours
-                  </div>
-                  <div className="text-sm text-white/70">
-                    <span className="text-white">Age Restriction:</span> 18+
-                  </div>
-                </div>
-              </div>
-            </div>
-            <Button className="w-full bg-teal-500 hover:bg-teal-400 text-white">
-              View More
-            </Button>
+          
+          {/* Back of the center ticket */}
+          <div className="absolute backface-hidden w-full h-full [transform:rotateY(180deg)]">
+            <Image
+              src={backTic || "/placeholder.svg"}
+              alt="Ticket Back"
+              width={width}
+              height={height}
+              className="w-full h-full object-cover rounded-xl shadow-2xl"
+            />
           </div>
         </div>
       </div>
+    )
+  }
+
+  // For side and extreme tickets
+  const ticketImages = {
+    left: '/leftsecticket.png',
+    right: '/rightsecticket.png',
+    leftExt: '/leftextticket.png',
+    rightExt: '/rightextticket.png'
+  }
+
+  return (
+    <div 
+      className="relative"
+      style={{ 
+        width,
+        height,
+        transform: transforms[type],
+        opacity: opacities[type],
+        transition: 'all 0.5s ease-in-out',
+        zIndex: type === 'leftExt' || type === 'rightExt' ? 10 : 20,
+        transformStyle: 'preserve-3d'
+      }}
+    >
+      <Image
+        src={ticketImages[type] || "/placeholder.svg"}
+        alt="Ticket"
+        width={width}
+        height={height}
+        className="w-full h-full object-cover rounded-xl shadow-xl"
+      />
     </div>
   )
 }
