@@ -8,7 +8,8 @@ export function AppShowcase() {
     <section className="py-16 pt-0 sm:py-32 sm:pt-0">
       <div className="container mx-auto px-4">
         <h2 className="text-4xl md:text-5xl font-medium text-[#FFFFFFB2] text-center mb-20 font-montserrat">
-          Be <span className="text-white">Prepared</span> To Have <span className="text-white">Fun</span>
+          Be <span className="text-white">Prepared</span> To Have{" "}
+          <span className="text-white">Fun</span>
         </h2>
 
         <div className="relative max-w-5xl mx-auto h-[600px]">

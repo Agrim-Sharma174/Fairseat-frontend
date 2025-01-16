@@ -29,10 +29,15 @@ export default function Footer() {
       <div className="container mx-auto px-4 py-12 sm:py-16">
         <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-12">
           {/* Logo and Newsletter */}
-          <div className="space-y-6 sm:space-y-8 text-center sm:text-left col-span-2 sm:col-span-1">
+          <div className="space-y-6 sm:space-y-8 text-center sm:text-left col-span-2 lg:col-span-1">
             <div className="flex gap-2 items-center justify-center sm:justify-start">
               <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
-              <Image src={logoLayer} alt="FairSeat Logo" width={120} height={30} />
+              <Image
+                src={logoLayer}
+                alt="FairSeat Logo"
+                width={120}
+                height={30}
+              />
             </div>
             <div>
               <h3 className="text-xl font-medium mb-2">Stay Updated!</h3>
@@ -119,7 +124,7 @@ export default function Footer() {
           />
           <hr className="w-4/12 sm:w-5/12 absolute right-0 top-3" />
           <div className="flex gap-4 sm:gap-6">
-          {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
+            {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
               <a
                 key={index}
                 href="#"

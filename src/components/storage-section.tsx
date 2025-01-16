@@ -52,7 +52,7 @@ export default function StoriesSection() {
             Stories
           </span>
           <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
-          <span className="text-white">Share your</span> Stories
+            <span className="text-white">Share your</span> Stories
           </h2>
         </div>
 

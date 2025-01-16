@@ -37,7 +37,7 @@ export function FeaturesSection() {
             Our features
           </span>
           <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
-          <span className="text-white">Explore Features</span> Of Our Solution
+            <span className="text-white">Explore Features</span> Of Our Solution
           </h2>
         </div>
         <div className="flex justify-center sm:block">
