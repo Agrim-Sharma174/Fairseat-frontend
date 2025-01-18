@@ -29,13 +29,25 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-center sm:text-left">
             <Tent className="w-6 h-6" />
             <div>
-              <span className={`${montserrat.className} text-lg font-semibold text-white`}>List your show</span>
-              <span className={`${raleway.className} hidden md:inline text-[#FFFFFFB2] ml-2 text-lg font-medium`}>
+              <span
+                className={`${montserrat.className} text-lg font-semibold text-white`}
+              >
+                List your show
+              </span>
+              <span
+                className={`${raleway.className} hidden md:inline text-[#FFFFFFB2] ml-2 text-lg font-medium`}
+              >
                 Got an Experience? Partner and get your event listed on FairSeat
               </span>
             </div>
           </div>
-          <Button className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto font-medium text-sm`}>
+          <Button
+            className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto font-medium text-sm`}
+            onClick={() =>
+              (window.location.href =
+                "https://wa.me/9922530601?text=Hi,%20I%20am%20interested%20in%20FairSeat%20details!")
+            }
+          >
             Contact Today!
           </Button>
         </div>
@@ -128,14 +140,14 @@ export default function Footer() {
         <div className="relative flex flex-col items-center gap-4 sm:gap-6">
           <hr className="w-4/12 sm:w-5/12 absolute left-0 top-3" />
           <div className="flex gap-2 items-center justify-center sm:justify-start">
-              <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
-              <Image
-                src={logoLayer}
-                alt="FairSeat Logo"
-                width={120}
-                height={30}
-              />
-            </div>
+            <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
+            <Image
+              src={logoLayer}
+              alt="FairSeat Logo"
+              width={120}
+              height={30}
+            />
+          </div>
           <hr className="w-4/12 sm:w-5/12 absolute right-0 top-3" />
           <div className="flex gap-4 sm:gap-6">
             {[Instagram, Linkedin, Facebook, Twitter].map((Icon, index) => (
@@ -148,7 +160,9 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className={`${raleway.className} text-sm font-normal sm:text-sm text-[#FFFFFFB2] text-center`}>
+          <p
+            className={`${raleway.className} text-sm font-normal sm:text-sm text-[#FFFFFFB2] text-center`}
+          >
             © 2025 FairSeat. All rights reserved. The content, trademarks, and
             intellectual property on this platform are owned by FairSeat and are
             protected under applicable copyright laws.

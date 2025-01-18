@@ -173,11 +173,16 @@ export function HeroSection() {
         {/* Responsive Ticket Cards */}
         <div className="relative w-full h-[40vh] sm:h-[50vh] lg:h-[60vh]">
           <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center justify-center scale-[0.6] sm:scale-[0.8] lg:scale-100">
-            <TicketCard type="leftExt" />
-            <TicketCard type="left" />
-            <TicketCard type="center" />
-            <TicketCard type="right" />
-            <TicketCard type="rightExt" />
+            <div className="relative">
+              <div className="absolute -inset-8 bg-gradient-to-r from-blue-500/20 via-cyan-500/20 to-blue-500/20 rounded-[30px] blur-2xl" />
+              <div className="relative flex">
+                <TicketCard type="leftExt" />
+                <TicketCard type="left" />
+                <TicketCard type="center" />
+                <TicketCard type="right" />
+                <TicketCard type="rightExt" />
+              </div>
+            </div>
           </div>
         </div>
       </div>

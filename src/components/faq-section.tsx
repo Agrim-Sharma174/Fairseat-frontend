@@ -1,12 +1,7 @@
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Button } from "@/components/ui/button";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 import Link from "next/link";
+import { MessageCircle, ChevronDown } from "lucide-react";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -26,94 +21,128 @@ const firaCode = Fira_Code({
 const FAQs = [
   {
     question: "What makes FairSeat different from other ticketing platforms?",
-    answer:
-      "FairSeat leverages blockchain technology to ensure transparent and fair ticket sales. Each transaction is securely recorded, eliminating the chances of ticket duplication, fraud, or scalping. Our platform prioritizes fairness and ensures that tickets reach genuine buyers at fair prices.",
+    answer: "FairSeat leverages blockchain technology to ensure transparent and fair ticket sales. Each transaction is securely recorded, eliminating the chances of ticket duplication, fraud, or scalping. Our platform prioritizes fairness and ensures that tickets reach genuine buyers at fair prices.",
   },
   {
     question: "How does blockchain help prevent ticket scalping?",
-    answer:
-      "Blockchain technology creates an immutable record of ticket ownership and transfers. This prevents unauthorized duplication and ensures that each ticket can only be resold through our authorized platform, effectively eliminating scalping opportunities.",
+    answer: "Blockchain technology creates an immutable record of ticket ownership and transfers. This prevents unauthorized duplication and ensures that each ticket can only be resold through our authorized platform, effectively eliminating scalping opportunities.",
   },
   {
     question: "Can I resell my ticket if I can't attend the event?",
-    answer:
-      "Yes, you can resell your ticket through our platform. Our secure resale system ensures fair pricing and prevents scalping while allowing legitimate transfers between users.",
+    answer: "Yes, you can resell your ticket through our platform. Our secure resale system ensures fair pricing and prevents scalping while allowing legitimate transfers between users.",
   },
   {
     question: "What makes FairSeat different from other ticketing platforms?",
-    answer:
-      "Our unique combination of blockchain technology, secure verification processes, and commitment to fair pricing sets us apart. We prioritize genuine fans and ensure transparent transactions.",
+    answer: "Our unique combination of blockchain technology, secure verification processes, and commitment to fair pricing sets us apart. We prioritize genuine fans and ensure transparent transactions.",
   },
   {
     question: "How do I know my ticket purchase is secure?",
-    answer:
-      "Every transaction on FairSeat is secured by blockchain technology and encrypted. You'll receive a unique digital signature for your ticket, and our platform provides real-time verification of ticket authenticity.",
+    answer: "Every transaction on FairSeat is secured by blockchain technology and encrypted. You'll receive a unique digital signature for your ticket, and our platform provides real-time verification of ticket authenticity.",
   },
 ];
 
 export default function FAQSection() {
   return (
-    <div className="min-h-screen text-white py-12 sm:py-16">
+    <section className="py-16 sm:py-20 lg:py-24 relative overflow-hidden bg-gradient-to-r from-[#0497AA]/10 to-[#60C9DD]/10">
+      <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0497AA]/10 to-transparent pointer-events-none" />
+
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
-          <span
-            className={`${firaCode.className} px-4 py-1 font-normal text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit`}
-          >
-            Questions
+          <span className={`${firaCode.className} px-4 py-1 font-normal text-sm rounded-full bg-gradient-to-r from-[#0497AA] to-[#60C9DD] text-white w-fit`}>
+            Get Answers
           </span>
-          <h2
-            className={`${montserrat.className} text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium`}
-          >
-            <span className="text-white">Frequently Asked</span> Questions
-            (FAQs)
+          <h2 className={`${montserrat.className} text-3xl sm:text-4xl text-white font-medium max-w-2xl`}>
+            <span className="text-white">Common Questions</span> About Our Platform
           </h2>
+          <p className={`${raleway.className} text-white/70 text-lg mt-4 max-w-2xl`}>
+            Find answers to frequently asked questions about our blockchain-powered ticketing solution.
+          </p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-3 sm:space-y-4">
-          {FAQs.map((faq, index) => (
-            <AccordionItem
-              key={index}
-              value={`item-${index}`}
-              className="border-none rounded-lg bg-[#242E38] backdrop-blur-sm transition-all duration-150"
-            >
-              <AccordionTrigger
-                className={`${raleway.className} hover:no-underline py-4 sm:py-6 text-left font-medium px-4 sm:px-6 text-lg sm:text-lg text-white`}
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
+          <Accordion type="single" collapsible className="space-y-4">
+            {FAQs.map((faq, index) => (
+              <AccordionItem
+                key={index}
+                value={`item-${index}`}
+                className="border-none rounded-xl bg-white/5 backdrop-blur-sm transition-all duration-300 group hover:border-[#60C9DD]/30"
               >
-                {faq.question}
-              </AccordionTrigger>
-              <AccordionContent
-                className={`${raleway.className}text-[#FFFFFFB2] bg-[#161C21] p-4 sm:p-6 sm:text-lg rounded-b-lg font-medium text-lg`}
-              >
-                {faq.answer}
-              </AccordionContent>
-            </AccordionItem>
-          ))}
-        </Accordion>
+                <AccordionTrigger
+                  className={`${raleway.className} hover:no-underline py-5 px-6 text-left font-medium text-lg text-white group-hover:text-[#60C9DD] transition-colors`}
+                >
+                  <div className="flex items-center gap-4">
+                    <div className="p-2 rounded-lg bg-[#60C9DD]/10 text-[#0497AA] group-hover:bg-[#60C9DD]/20 transition-all">
+                      <ChevronDown className="w-4 h-4 transition-transform duration-300" />
+                    </div>
+                    {faq.question}
+                  </div>
+                </AccordionTrigger>
+                <AccordionContent
+                  className={`${raleway.className} text-white/70 px-6 pb-5 pt-2 text-base leading-relaxed ml-14`}
+                >
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
+          </Accordion>
 
-        <div className="text-center mt-12 sm:mt-20 space-y-4">
-          <h3
-            className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent`}
-          >
-            Join Us In This Revolution
-          </h3>
-          <p
-            className={`${raleway.className} text-[#FFFFFFB2] font-normal max-w-2xl mx-auto text-lg sm:text-base`}
-          >
-            Be part of our community and stay in the loop!
-          </p>
-          <button
-            className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}
-          >
-            <Link
-              href="https://t.me/+nA4Ph03kEjU4M2Jl"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join Our Community
-            </Link>
-          </button>
+          <div className="relative">
+            <div className="absolute -inset-1 bg-gradient-to-r from-[#0497AA]/20 to-[#60C9DD]/20 rounded-2xl blur-2xl" />
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-xl p-8 border border-white/10">
+              <div className="space-y-6">
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-lg bg-[#60C9DD]/10 text-[#0497AA]">
+                    <MessageCircle className="w-6 h-6" />
+                  </div>
+                  <h3 className={`${montserrat.className} text-xl text-white font-medium`}>
+                    Still Have Questions?
+                  </h3>
+                </div>
+
+                <p className={`${raleway.className} text-white/70`}>
+                  Join our community to get instant answers from our team and connect with other users.
+                </p>
+
+                <Link
+                  href="https://t.me/+nA4Ph03kEjU4M2Jl"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`
+                    ${firaCode.className} 
+                    inline-block 
+                    rounded-full 
+                    bg-gradient-to-r 
+                    from-[#0497AA] 
+                    to-[#60C9DD] 
+                    px-8 
+                    py-3 
+                    text-white 
+                    font-medium 
+                    hover:from-[#0497AA] 
+                    hover:to-[#60C9DD] 
+                    transition-all
+                    shadow-lg
+                    hover:shadow-[#60C9DD]/25
+                  `}
+                >
+                  Join Our Community
+                </Link>
+
+                <div className="flex items-center gap-3 pt-4 border-t border-white/10">
+                  <div className="flex -space-x-2">
+                    {[1, 2, 3].map((i) => (
+                      <div key={i} className="w-8 h-8 rounded-full bg-[#60C9DD]/20 border-2 border-black" />
+                    ))}
+                  </div>
+                  <span className={`${firaCode.className} text-sm text-white/70`}>
+                    1,000+ members already joined
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
