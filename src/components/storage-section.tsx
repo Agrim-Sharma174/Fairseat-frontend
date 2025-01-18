@@ -25,35 +25,66 @@ interface Story {
   content: string;
 }
 
-const STORIES: Story[] = [
-  {
-    id: 1,
-    name: "Deepak Sharma",
-    avatar: "/placeholder.svg?height=40&width=40",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
-  },
-  {
-    id: 2,
-    name: "Rishi Jain",
-    avatar: "/placeholder.svg?height=40&width=40",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
-  },
-  {
-    id: 3,
-    name: "Priya Gupta",
-    avatar: "/placeholder.svg?height=40&width=40",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
-  },
-  {
-    id: 4,
-    name: "Sonali Shah",
-    avatar: "/placeholder.svg?height=40&width=40",
-    content:
-      "Lorem ipsum dolor sit amet consectetur. Lacus enim in ac lectus integer phaselius viverra ullamcorper. Eget adipiscing rhoncus quam tincidunt viverra.",
-  },
+const STORIES: Story[] = [{
+  "id": 1,
+  "name": "Ravi Kumar",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR_T4gIa3-huI-PtTmRr95TxKLqS3KBnCtTgw&s",
+  "content": "I bought tickets online for a concert, but when I arrived, I found out they were duplicates. I lost both my money and the chance to attend."
+},
+{
+  "id": 2,
+  "name": "Meera Singh",
+  "avatar": "https://jovialjourneys.co.in/wp-content/themes/twentytwentyone/assets_jj/image/1.jpg",
+  "content": "I purchased tickets for a cricket match from an online seller, but when I reached the venue, I was told my tickets were fake. It was so disappointing."
+},
+{
+  "id": 3,
+  "name": "Rajesh Gupta",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQMYmkj15d_oBJIwQGDWQmjM8pqkoZlzfNWCw&s",
+  "content": "Excited for the music festival, I bought tickets online. When I showed up, I was told they were counterfeit. I felt devastated after all the anticipation."
+},
+{
+  "id": 4,
+  "name": "Asha Desai",
+  "avatar": "https://deft360.com/wp-content/uploads/2016/01/Pooja-1-e1622323927868-350x350.jpg",
+  "content": "I tried buying tickets for a play, but when I went online, scalpers had grabbed them all. I couldn’t even find a single available seat."
+},
+{
+  "id": 5,
+  "name": "Karan Joshi",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQynU45UTbLodkNC19ePHes5plJNUNe0c2AhQ&s",
+  "content": "I paid extra for ‘VIP’ tickets to a concert. When I arrived, I was given regular tickets. The scam was disappointing, and I felt completely taken advantage of."
+},
+{
+  "id": 6,
+  "name": "Nisha Patel",
+  "avatar": "https://media.istockphoto.com/id/1135381120/photo/portrait-of-a-young-woman-outdoors-smiling.jpg?s=612x612&w=0&k=20&c=T5dukPD1r-o0BFqeqlIap7xzw07icucetwKaEC2Ms5M=",
+  "content": "I bought tickets for a highly anticipated sports event, but due to scalpers overbooking the venue, I couldn’t get in. My plans were ruined that day."
+},
+{
+  "id": 7,
+  "name": "Anil Mehta",
+  "avatar": "https://www.amity.edu/gurugram/microbackoffice/Uploads/TestimonialImage/98testi_RajivBasavaalumni.jpg",
+  "content": "I purchased tickets for an event online, but after payment, the seller disappeared without a trace. I was left with nothing but frustration and wasted money."
+},
+{
+  "id": 8,
+  "name": "Sita Reddy",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfep5EJ7f5F5XjaWL1doD6Xv6gOrf-TVbbAkFpR0PclNpNAqy_3RW45foP8bNgd4TYlxc&usqp=CAU",
+  "content": "I bought tickets to a concert, only to be told at the venue that they were fake. The whole experience was heartbreaking, especially after paying so much."
+},
+{
+  "id": 9,
+  "name": "Vikram Sharma",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSm1eXfTfzDGDzyuE_dPsRODDHISZMrsKVwGcv7-xzZ1bP0QonUktPQLz5bw8mys-1tWuQ&usqp=CAU",
+  "content": "I tried to buy tickets for a sold-out event, but the only ones left were insanely overpriced by scalpers. It felt unfair, and I missed the chance."
+},
+{
+  "id": 10,
+  "name": "Priya Rao",
+  "avatar": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTTNsEwdKJ-1baff5Q6k8jHMezSQokxWs3wMA&s",
+  "content": "I bought event tickets through a third-party vendor, but when I showed up, I was told my tickets were duplicates. I couldn’t believe I’d been scammed."
+}
 ];
 
 export default function StoriesSection() {

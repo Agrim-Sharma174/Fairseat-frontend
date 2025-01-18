@@ -31,7 +31,7 @@ export function HeroSection() {
     const section = document.getElementById(sectionId);
     if (section) {
       section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false); // Close menu on mobile
+      setIsMenuOpen(false);
     }
   };
 
@@ -130,6 +130,16 @@ export function HeroSection() {
       {/* Responsive Hero Content */}
       <div className="container mx-auto mt-10 px-4 pt-20 pb-16 lg:pb-32">
         <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6 mb-12 sm:mb-20">
+          {/* Coming Soon Badge */}
+          <div className="flex justify-center mb-4">
+            <div className="inline-flex items-center px-4 py-1.5 rounded-3xl bg-gradient-to-r from-[#0497AA]/20 to-[#60C9DD]/20 border border-[#60C9DD]/30 backdrop-blur-sm">
+              <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse mr-2" />
+              <span className={`${firaCode.className} text-[#60C9DD] text-sm font-medium`}>
+                Coming Soon
+              </span>
+            </div>
+          </div>
+
           <h1
             className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent`}
           >

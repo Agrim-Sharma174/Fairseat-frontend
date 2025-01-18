@@ -1,10 +1,16 @@
-import { Bot, Shield, Ticket, Wallet } from "lucide-react";
+import { Bot, Shield, Ticket, Wallet } from 'lucide-react';
 import TicketCard from "./TicketCard";
-import { Fira_Code, Montserrat } from "next/font/google";
+import CollectibleCard from "./CollectibleCard";
+import { Fira_Code, Montserrat, Raleway } from 'next/font/google';
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
 });
 
 const firaCode = Fira_Code({
@@ -17,7 +23,7 @@ const features = [
     icon: Bot,
     title: "Bot-Free Ticketing",
     description:
-      "Ensure real fans always get the tickets they genuinely deserve, eliminating automated purchases.",
+      "Ensure real fans get the tickets they deserve, preventing automated purchases.",
   },
   {
     icon: Wallet,
@@ -51,8 +57,9 @@ export function FeaturesSection() {
             <span className="text-white">Explore Features</span> Of Our Solution
           </h2>
         </div>
-        <div className="flex justify-center sm:block">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 mx-auto">
+        <div className="grid lg:grid-cols-5 gap-6">
+          {/* Left side - 2x2 feature cards */}
+          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4 sm:gap-6">
             {features.map((feature, index) => (
               <TicketCard
                 key={index}
@@ -61,6 +68,10 @@ export function FeaturesSection() {
                 description={feature.description}
               />
             ))}
+          </div>
+          {/* Right side - collectible card */}
+          <div className="lg:col-span-2">
+            <CollectibleCard />
           </div>
         </div>
       </div>

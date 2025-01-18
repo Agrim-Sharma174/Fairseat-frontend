@@ -20,7 +20,7 @@ interface TicketCardProps {
 
 export default function TicketCard({ icon: Icon, title, description }: TicketCardProps) {
   return (
-    <Card className="relative w-[271px] h-[330px] rounded-[16px] bg-gray-500/30 border-none overflow-hidden">
+    <Card className="relative w-[360px] h-[330px] rounded-[16px] bg-gray-500/30 border-none overflow-hidden">
       {/* Background circles */}
       <div className="absolute top-[-135px] left-[-135px]">
         <div className="w-[341px] h-[341px] rounded-full bg-gray-700/20" />

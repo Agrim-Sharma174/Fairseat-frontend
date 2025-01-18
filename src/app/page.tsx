@@ -1,14 +1,15 @@
 "use client";
 
 import { AppShowcase } from "@/components/app-showcase";
-import FAQSection from "@/components/faq-section";
-import { FeaturesSection } from "@/components/features-section";
 import Footer from "@/components/Footer";
 import { HeroSection } from "@/components/hero-section";
 import StoriesSection from "@/components/storage-section";
 import bodyBackground from "../../public/bodyBackground.png";
 import { useState, useEffect } from "react";
 import { ChevronUpIcon } from "lucide-react";
+import FAQSection from "@/components/faq-section";
+import { FeaturesSection } from "@/components/features-section";
+import { ProblemsSection } from "@/components/problems-section";
 
 export default function Home() {
   const [isBackToTopVisible, setIsBackToTopVisible] = useState(false);
@@ -44,6 +45,9 @@ export default function Home() {
     >
       <div id="hero-section">
         <HeroSection />
+      </div>
+      <div id="problems-section">
+        <ProblemsSection />
       </div>
       <div id="features-section">
         <FeaturesSection />
