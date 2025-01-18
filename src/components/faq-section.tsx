@@ -6,6 +6,7 @@ import {
 } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
 import { Fira_Code, Montserrat, Raleway } from "next/font/google";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -75,10 +76,14 @@ export default function FAQSection() {
               value={`item-${index}`}
               className="border-none rounded-lg bg-[#242E38] backdrop-blur-sm transition-all duration-150"
             >
-              <AccordionTrigger className={`${raleway.className} hover:no-underline py-4 sm:py-6 text-left font-medium px-4 sm:px-6 text-lg sm:text-lg text-white`}>
+              <AccordionTrigger
+                className={`${raleway.className} hover:no-underline py-4 sm:py-6 text-left font-medium px-4 sm:px-6 text-lg sm:text-lg text-white`}
+              >
                 {faq.question}
               </AccordionTrigger>
-              <AccordionContent className={`${raleway.className}text-[#FFFFFFB2] bg-[#161C21] p-4 sm:p-6 sm:text-lg rounded-b-lg font-medium text-lg`}>
+              <AccordionContent
+                className={`${raleway.className}text-[#FFFFFFB2] bg-[#161C21] p-4 sm:p-6 sm:text-lg rounded-b-lg font-medium text-lg`}
+              >
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>
@@ -86,14 +91,26 @@ export default function FAQSection() {
         </Accordion>
 
         <div className="text-center mt-12 sm:mt-20 space-y-4">
-          <h3 className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent`}>
+          <h3
+            className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent`}
+          >
             Join Us In This Revolution
           </h3>
-          <p className={`${raleway.className} text-[#FFFFFFB2] font-normal max-w-2xl mx-auto text-lg sm:text-base`}>
+          <p
+            className={`${raleway.className} text-[#FFFFFFB2] font-normal max-w-2xl mx-auto text-lg sm:text-base`}
+          >
             Be part of our community and stay in the loop!
           </p>
-          <button className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}>
-            Join Our Community
+          <button
+            className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}
+          >
+            <Link
+              href="https://t.me/+nA4Ph03kEjU4M2Jl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Our Community
+            </Link>
           </button>
         </div>
       </div>

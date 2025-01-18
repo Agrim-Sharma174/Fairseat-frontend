@@ -1,12 +1,13 @@
 "use client";
-import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 
+import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 import React, { useState } from "react";
 import Image from "next/image";
 import { TicketCard } from "./ticket-card";
 import logo from "../../public/Logo.svg";
 import logoLayer from "../../public/logolayer.svg";
 import { MenuIcon, XIcon } from "lucide-react";
+import Link from "next/link";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -25,6 +26,14 @@ const firaCode = Fira_Code({
 
 export function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const scrollToSection = (sectionId: string) => {
+    const section = document.getElementById(sectionId);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+      setIsMenuOpen(false); // Close menu on mobile
+    }
+  };
 
   return (
     <div className="min-h-screen overflow-x-hidden">
@@ -55,51 +64,66 @@ export function HeroSection() {
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex items-center space-x-12">
-          <a href="#" className="text-white/70 hover:text-[#60C9DD] text-sm">
+          <button
+            onClick={() => scrollToSection("hero-section")}
+            className="text-white/70 hover:text-[#60C9DD] text-sm"
+          >
             Home
-          </a>
-          <a href="#" className="text-white/70 hover:text-[#60C9DD] text-sm">
-            About Us
-          </a>
-          <a href="#" className="text-white/70 hover:text-[#60C9DD] text-sm">
-            Features
-          </a>
-          <button className="bg-[#0497AA] text-white px-6 py-1.5 rounded-full text-sm hover:bg-cyan-500">
-            Join
           </button>
+          <button
+            onClick={() => scrollToSection("features-section")}
+            className="text-white/70 hover:text-[#60C9DD] text-sm"
+          >
+            Features
+          </button>
+          <button
+            onClick={() => scrollToSection("faq-section")}
+            className="text-white/70 hover:text-[#60C9DD] text-sm"
+          >
+            FAQs
+          </button>
+          <a
+            href="https://t.me/+nA4Ph03kEjU4M2Jl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-[#0497AA] text-white px-6 py-1.5 rounded-full text-sm hover:bg-cyan-500">
+              Join
+            </button>
+          </a>
         </div>
       </nav>
 
       {/* Mobile Navigation */}
       {isMenuOpen && (
         <div className="fixed top-0 left-0 w-full h-screen bg-gray-900 bg-opacity-90 flex flex-col items-center justify-center z-[90]">
-          <a
-            href="#"
+          <button
+            onClick={() => scrollToSection("hero-section")}
             className="text-white/70 hover:text-[#60C9DD] text-lg mb-6"
-            onClick={() => setIsMenuOpen(false)}
           >
             Home
-          </a>
-          <a
-            href="#"
+          </button>
+          <button
+            onClick={() => scrollToSection("features-section")}
             className="text-white/70 hover:text-[#60C9DD] text-lg mb-6"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            About Us
-          </a>
-          <a
-            href="#"
-            className="text-white/70 hover:text-[#60C9DD] text-lg mb-6"
-            onClick={() => setIsMenuOpen(false)}
           >
             Features
-          </a>
-          <button
-            className="bg-[#0497AA] text-white px-6 py-2 rounded-full text-lg hover:bg-cyan-500"
-            onClick={() => setIsMenuOpen(false)}
-          >
-            Join
           </button>
+          <button
+            onClick={() => scrollToSection("faq-section")}
+            className="text-white/70 hover:text-[#60C9DD] text-lg mb-6"
+          >
+            FAQs
+          </button>
+          <a
+            href="https://t.me/+nA4Ph03kEjU4M2Jl"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <button className="bg-[#0497AA] text-white px-6 py-2 rounded-full text-lg hover:bg-cyan-500">
+              Join
+            </button>
+          </a>
         </div>
       )}
 
@@ -111,16 +135,28 @@ export function HeroSection() {
           >
             Fair Tickets, Real Fans
           </h1>
-          <h2 className={`${montserrat.className} text-xl sm:text-2xl lg:text-4xl font-medium text-white/80`}>
+          <h2
+            className={`${montserrat.className} text-xl sm:text-2xl lg:text-4xl font-medium text-white/80`}
+          >
             Revolutionizing Ticketing with Blockchain
           </h2>
-          <p className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}>
+          <p
+            className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}
+          >
             Say goodbye to bots and black-market pricing. FairSeat uses
             blockchain technology to ensure transparent, secure, and fair ticket
             booking, so every true fan gets a fair chance.
           </p>
-          <button className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}>
-            Join Our Community
+          <button
+            className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}
+          >
+            <Link
+              href="https://t.me/+nA4Ph03kEjU4M2Jl"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Join Our Community
+            </Link>
           </button>
         </div>
 
