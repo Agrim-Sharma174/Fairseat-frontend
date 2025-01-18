@@ -3,6 +3,22 @@ import { Tent, Instagram, Linkedin, Facebook, Twitter } from "lucide-react";
 import logo from "../../public/Logo.svg";
 import logoLayer from "../../public/logolayer.svg";
 import Image from "next/image";
+import { Fira_Code, Montserrat, Raleway } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export default function Footer() {
   return (
@@ -13,13 +29,13 @@ export default function Footer() {
           <div className="flex items-center gap-3 text-center sm:text-left">
             <Tent className="w-6 h-6" />
             <div>
-              <span className="font-medium">List your show</span>
-              <span className="hidden md:inline text-gray-400 ml-2">
+              <span className={`${montserrat.className} text-lg font-semibold text-white`}>List your show</span>
+              <span className={`${raleway.className} hidden md:inline text-[#FFFFFFB2] ml-2 text-lg font-medium`}>
                 Got an Experience? Partner and get your event listed on FairSeat
               </span>
             </div>
           </div>
-          <Button className="bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto">
+          <Button className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto font-medium text-sm`}>
             Contact Today!
           </Button>
         </div>
@@ -40,11 +56,11 @@ export default function Footer() {
               />
             </div>
             <div>
-              <h3 className="text-xl font-medium mb-2">Stay Updated!</h3>
-              <p className="text-[#FFFFFFB2] mb-4 font-raleway">
+              <h3 className={`${montserrat.className} text-2xl font-medium mb-2`}>Stay Updated!</h3>
+              <p className={`${raleway.className} text-[#FFFFFFB2] font-medium text-lg mb-4`}>
                 Join our community for the latest events and offers.
               </p>
-              <Button className="bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8 w-full sm:w-auto">
+              <Button className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-500 text-white rounded-full px-8 w-full sm:w-auto font-medium text-sm`}>
                 Join
               </Button>
             </div>
@@ -52,8 +68,8 @@ export default function Footer() {
 
           {/* Explore Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Explore</h3>
-            <ul className="space-y-3">
+            <h3 className={`${montserrat.className} text-2xl font-medium mb-6`}>Explore</h3>
+            <ul className={`${raleway} text-lg font-medium space-y-3`}>
               {["Home", "Events", "Features", "Stories", "FAQs"].map((item) => (
                 <li key={item}>
                   <a
@@ -69,8 +85,8 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Legal</h3>
-            <ul className="space-y-3">
+          <h3 className={`${montserrat.className} text-2xl font-medium mb-6`}>Legal</h3>
+            <ul className={`${raleway} text-lg font-medium space-y-3`}>
               {["Privacy Policy", "Terms of Service", "Refund Policy"].map(
                 (item) => (
                   <li key={item}>
@@ -88,8 +104,8 @@ export default function Footer() {
 
           {/* Social Links */}
           <div>
-            <h3 className="text-xl font-medium mb-6">Socials</h3>
-            <ul className="space-y-3">
+          <h3 className={`${montserrat.className} text-2xl font-medium mb-6`}>Socials</h3>
+            <ul className={`${raleway} text-lg font-medium space-y-3`}>
               {[
                 { name: "Instagram", icon: Instagram },
                 { name: "LinkedIn", icon: Linkedin },
@@ -134,7 +150,7 @@ export default function Footer() {
               </a>
             ))}
           </div>
-          <p className="text-xs sm:text-sm text-[#FFFFFFB2] text-center">
+          <p className={`${raleway.className} text-sm font-normal sm:text-sm text-[#FFFFFFB2] text-center`}>
             © 2025 FairSeat. All rights reserved. The content, trademarks, and
             intellectual property on this platform are owned by FairSeat and are
             protected under applicable copyright laws.

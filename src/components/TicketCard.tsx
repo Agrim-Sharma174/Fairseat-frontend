@@ -1,5 +1,16 @@
 import { LucideIcon } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import { Fira_Code, Raleway } from "next/font/google";
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 interface TicketCardProps {
   icon: LucideIcon;
@@ -23,13 +34,12 @@ export default function TicketCard({ icon: Icon, title, description }: TicketCar
         </div>
 
         <div className="mt-auto mb-8">
-          <h3 className="text-lg font-mono text-white font-medium leading-tight mb-2">
+          <h3 className={`${firaCode.className} text-lg text-white font-normal leading-tight mb-2`}>
             {title}
           </h3>
-          <p className="text-gray-300 text-sm leading-relaxed">{description}</p>
+          <p className={`${raleway.className} text-gray-300 text-sm font-normal leading-relaxed`}>{description}</p>
         </div>
       </CardContent>
     </Card>
   );
 }
-

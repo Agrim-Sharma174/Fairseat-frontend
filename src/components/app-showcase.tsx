@@ -2,12 +2,18 @@ import Image from "next/image"; // Import Image from Next.js
 import iphone1 from "../../public/iphone 16 _ portrait (1) 1.png";
 import iphone2 from "../../public/iphone 16 _ portrait (2) 1.png";
 import iphone3 from "../../public/iphone 16 _ portrait 1.png";
+import { Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
 
 export function AppShowcase() {
   return (
     <section className="py-16 pt-0 sm:py-32 sm:pt-0">
       <div className="container mx-auto px-4">
-        <h2 className="text-4xl md:text-5xl font-medium text-[#FFFFFFB2] text-center mb-20 font-montserrat">
+        <h2 className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium text-[#FFFFFFB2] text-center mb-20 font-montserrat`}>
           Be <span className="text-white">Prepared</span> To Have{" "}
           <span className="text-white">Fun</span>
         </h2>

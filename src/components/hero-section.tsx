@@ -1,4 +1,5 @@
 "use client";
+import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -6,6 +7,21 @@ import { TicketCard } from "./ticket-card";
 import logo from "../../public/Logo.svg";
 import logoLayer from "../../public/logolayer.svg";
 import { MenuIcon, XIcon } from "lucide-react";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 export function HeroSection() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -90,18 +106,20 @@ export function HeroSection() {
       {/* Responsive Hero Content */}
       <div className="container mx-auto mt-10 px-4 pt-20 pb-16 lg:pb-32">
         <div className="max-w-3xl mx-auto text-center space-y-4 sm:space-y-6 mb-12 sm:mb-20">
-          <h1 className="text-2xl sm:text-3xl lg:text-5xl font-thin bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent">
+          <h1
+            className={`${montserrat.className} text-2xl sm:text-3xl lg:text-5xl font-medium bg-gradient-to-r from-gray-400 to-gray-200 bg-clip-text text-transparent`}
+          >
             Fair Tickets, Real Fans
           </h1>
-          <h2 className="text-xl sm:text-2xl lg:text-4xl font-medium text-white/80">
+          <h2 className={`${montserrat.className} text-xl sm:text-2xl lg:text-4xl font-medium text-white/80`}>
             Revolutionizing Ticketing with Blockchain
           </h2>
-          <p className="text-white/70 max-w-2xl mx-auto text-sm sm:text-base">
+          <p className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}>
             Say goodbye to bots and black-market pricing. FairSeat uses
             blockchain technology to ensure transparent, secure, and fair ticket
             booking, so every true fan gets a fair chance.
           </p>
-          <button className="rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all">
+          <button className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}>
             Join Our Community
           </button>
         </div>

@@ -1,5 +1,16 @@
 import { Bot, Shield, Ticket, Wallet } from "lucide-react";
 import TicketCard from "./TicketCard";
+import { Fira_Code, Montserrat } from "next/font/google";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 const features = [
   {
@@ -33,10 +44,10 @@ export function FeaturesSection() {
     <section className="py-16 sm:py-20 lg:py-24">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
-          <span className="px-4 py-1 text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit">
+          <span className={`${firaCode.className} px-4 py-1 font-normal text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit`}>
             Our features
           </span>
-          <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
+          <h2 className={`${montserrat.className} text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium`}>
             <span className="text-white">Explore Features</span> Of Our Solution
           </h2>
         </div>

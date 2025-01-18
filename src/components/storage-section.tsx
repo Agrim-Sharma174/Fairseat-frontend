@@ -1,6 +1,22 @@
 "use client";
 
+import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 import { useEffect, useState } from "react";
+
+const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700"],
+});
+
+const raleway = Raleway({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
+
+const firaCode = Fira_Code({
+  subsets: ["latin"],
+  weight: ["400", "500", "600", "700"],
+});
 
 interface Story {
   id: number;
@@ -48,10 +64,14 @@ export default function StoriesSection() {
     <div className="min-h-screen text-white py-12 sm:py-16 overflow-hidden">
       <div className="container mx-auto px-4">
         <div className="flex flex-col items-left gap-2 mb-8 sm:mb-12">
-          <span className="px-4 py-1 text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit">
+          <span
+            className={`${firaCode.className} px-4 py-1 font-normal text-sm rounded-full bg-[#8080804D] text-[#FFFFFFB2] w-fit`}
+          >
             Stories
           </span>
-          <h2 className="text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium">
+          <h2
+            className={`${montserrat.className} text-3xl sm:text-4xl text-[#FFFFFFB2] font-medium`}
+          >
             <span className="text-white">Share your</span> Stories
           </h2>
         </div>
@@ -108,9 +128,9 @@ function StoryCard({ name, avatar, content }: Story) {
           alt={name}
           className="w-10 h-10 rounded-full object-cover"
         />
-        <span className="font-medium">{name}</span>
+        <span className={`${raleway.className} font-medium text-white`}>{name}</span>
       </div>
-      <p className="text-sm text-gray-300 leading-relaxed">{content}</p>
+      <p className={`${raleway.className} text-sm text-[#FFFFFFB2] leading-relaxed font-normal`}>{content}</p>
     </div>
   );
 }
