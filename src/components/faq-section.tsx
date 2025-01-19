@@ -182,16 +182,22 @@ export default function FAQSection() {
         </div>
       </div>
       <div className="text-6xl text-white font-black flex justify-center items-center mt-10">
-  <blockquote className="relative border-l-8 border-[#0497AA] pl-8 transform hover:scale-105 transition-transform duration-300">
-    <div className="relative">
-      <span className="absolute -left-4 top-0 text-[#0497AA] text-8xl opacity-20">"</span>
-      <p className="italic text-center leading-tight">
-        <span className="text-[#0497AA]">Revolution</span> is on the way <br/>
-        Be a <span className="underline decoration-[#0497AA] decoration-4">part of it</span>
-      </p>
-    </div>
-  </blockquote>
-</div>
+        <blockquote className="relative border-l-8 border-[#0497AA] pl-8 transform  transition-transform duration-300 scale-90 hover:scale-100 md:scale-100 hover:md:scale-105 ">
+          <div className="relative">
+            <span className="absolute -left-4 top-0 text-[#0497AA] text-8xl opacity-20">
+              "
+            </span>
+            <p className="italic text-center leading-tight">
+              <span className="text-[#0497AA]">Revolution</span> is on the way{" "}
+              <br />
+              Be a{" "}
+              <span className="underline decoration-[#0497AA] decoration-4">
+                part of it
+              </span>
+            </p>
+          </div>
+        </blockquote>
+      </div>
     </section>
   );
 }

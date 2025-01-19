@@ -69,7 +69,7 @@ export default function Footer() {
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto px-4 py-6 sm:py-8">
         <div className="relative flex flex-col items-center gap-4 sm:gap-6">
-          <hr className="w-4/12 sm:w-5/12 absolute left-0 top-3" />
+          <hr className="w-3/12 sm:w-5/12 absolute left-0 top-3" />
           <div className="flex gap-2 items-center justify-center sm:justify-start">
             <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
             <Image
@@ -79,7 +79,7 @@ export default function Footer() {
               height={30}
             />
           </div>
-          <hr className="w-4/12 sm:w-5/12 absolute right-0 top-3" />
+          <hr className="w-3/12 sm:w-5/12 absolute right-0 top-3" />
           <div className="flex gap-4 sm:gap-6">
             <a
               href="https://www.instagram.com/fairseathq/"
