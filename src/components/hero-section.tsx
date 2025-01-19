@@ -134,7 +134,9 @@ export function HeroSection() {
           <div className="flex justify-center mb-4">
             <div className="inline-flex items-center px-4 py-1.5 rounded-3xl bg-gradient-to-r from-[#0497AA]/20 to-[#60C9DD]/20 border border-[#60C9DD]/30 backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse mr-2" />
-              <span className={`${firaCode.className} text-[#60C9DD] text-sm font-medium`}>
+              <span
+                className={`${firaCode.className} text-[#60C9DD] text-sm font-medium`}
+              >
                 Coming Soon
               </span>
             </div>
@@ -153,9 +155,9 @@ export function HeroSection() {
           <p
             className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}
           >
-            Say goodbye to bots and black-market pricing. FairSeat uses
-            blockchain technology to ensure transparent, secure, and fair ticket
-            booking, so every true fan gets a fair chance.
+            FairSeat puts real fans back in control with blockchain technology,
+            ensuring every ticket is fair, transparent, and secure. Because the
+            spotlight belongs to you.
           </p>
           <button
             className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}

@@ -61,6 +61,22 @@ export default {
         "fira-code": ["Fira Code", "monospace"],
         raleway: ["Raleway", "sans-serif"],
       },
+      animation: {
+        'spin-slow': 'spin 3s linear infinite',
+        'bounce-gentle': 'bounce 2s infinite',
+      },
+      keyframes: {
+        bounce: {
+          '0%, 100%': {
+            transform: 'translateY(-5%)',
+            animationTimingFunction: 'cubic-bezier(0.8, 0, 1, 1)',
+          },
+          '50%': {
+            transform: 'translateY(0)',
+            animationTimingFunction: 'cubic-bezier(0, 0, 0.2, 1)',
+          },
+        },
+      },
     },
   },
   plugins: [require("tailwindcss-animate")],
