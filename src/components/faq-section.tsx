@@ -89,14 +89,14 @@ export default function FAQSection() {
                   className={`${raleway.className} hover:no-underline py-5 px-6 text-left font-medium text-lg text-white group-hover:text-[#60C9DD] transition-colors`}
                 >
                   <div className="flex items-center gap-4">
-                    <div className="p-2 rounded-lg bg-[#60C9DD]/10 text-[#0497AA] group-hover:bg-[#60C9DD]/20 transition-all">
+                    {/* <div className="p-2 rounded-lg bg-[#60C9DD]/10 text-[#0497AA] group-hover:bg-[#60C9DD]/20 transition-all">
                       <ChevronDown className="w-4 h-4 transition-transform duration-300" />
-                    </div>
+                    </div> */}
                     {faq.question}
                   </div>
                 </AccordionTrigger>
                 <AccordionContent
-                  className={`${raleway.className} text-white/70 px-6 pb-5 pt-2 text-base leading-relaxed ml-14`}
+                  className={`${raleway.className} text-white/70 px-6 pb-5 pt-2 text-base leading-relaxed`}
                 >
                   {faq.answer}
                 </AccordionContent>

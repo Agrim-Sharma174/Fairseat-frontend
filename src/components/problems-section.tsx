@@ -62,7 +62,7 @@ export function ProblemsSection() {
           </h2>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 items-center">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
           {/* Left side - Problem cards */}
           <div className="space-y-6">
             <p className={`${raleway.className} text-white/70 text-lg mb-8`}>
@@ -73,9 +73,9 @@ export function ProblemsSection() {
               {problems.map((problem, index) => (
                 <div 
                   key={index}
-                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-red-500/30 transition-all group"
+                  className="bg-white/5 backdrop-blur-sm rounded-xl p-6 border border-white/10 hover:border-red-500/30 transition-all group h-full"
                 >
-                  <div className="flex items-center gap-4 mb-3">
+                  <div className="flex items-center gap-4 mb-[21px]">
                     <div className="p-2 rounded-lg bg-red-500/10 text-red-400 group-hover:bg-red-500/20 transition-all">
                       <problem.icon className="w-5 h-5" />
                     </div>
@@ -95,13 +95,13 @@ export function ProblemsSection() {
           </div>
 
           {/* Right side - News collage */}
-          <div className="relative">
+          <div className="relative h-full flex items-end">
             <div className="absolute -inset-1 bg-gradient-to-r from-red-500/20 to-cyan-500/20 rounded-2xl blur-2xl" />
-            <div className="relative bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10">
+            <div className="relative bg-white/5 backdrop-blur-sm rounded-xl p-4 border border-white/10 w-full">
               <Image
                 src={newsCollage}
                 alt="News articles about ticket scalping"
-                className="rounded-lg w-full"
+                className="rounded-lg w-full h-auto"
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/0 to-black/60 rounded-xl" />
