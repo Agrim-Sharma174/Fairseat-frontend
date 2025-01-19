@@ -56,8 +56,10 @@ export default function Footer() {
             <Button
               className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto font-medium text-sm`}
               onClick={() =>
-                (window.location.href =
-                  "https://wa.me/7973521148?text=Hi,%20I%20am%20interested%20in%20FairSeat%20details!")
+                window.open(
+                  "https://wa.me/7973521148?text=Hi,%20I%20am%20interested%20in%20FairSeat%20details!",
+                  "_blank"
+                )
               }
             >
               Contact Today!
