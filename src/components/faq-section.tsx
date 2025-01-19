@@ -181,7 +181,7 @@ export default function FAQSection() {
           </div>
         </div>
       </div>
-      <div className="text-6xl text-white font-black flex justify-center items-center mt-10">
+      <div className="text-6xl text-white font-black flex justify-center items-center my-24">
         <blockquote className="relative border-l-8 border-[#0497AA] pl-8 transform  transition-transform duration-300 scale-90 hover:scale-100 md:scale-100 hover:md:scale-105 ">
           <div className="relative">
             <span className="absolute -left-4 top-0 text-[#0497AA] text-8xl opacity-20">
