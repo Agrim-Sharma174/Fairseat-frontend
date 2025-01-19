@@ -83,7 +83,7 @@ export function HeroSection() {
             FAQs
           </button>
           <a
-            href="https://chat.whatsapp.com/GGlhZnA46a8Hbmd4fXbdr6"
+            href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -116,7 +116,7 @@ export function HeroSection() {
             FAQs
           </button>
           <a
-            href="https://chat.whatsapp.com/GGlhZnA46a8Hbmd4fXbdr6"
+            href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -163,7 +163,7 @@ export function HeroSection() {
             className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}
           >
             <Link
-              href="https://chat.whatsapp.com/GGlhZnA46a8Hbmd4fXbdr6"
+              href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
               target="_blank"
               rel="noopener noreferrer"
             >

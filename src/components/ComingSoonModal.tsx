@@ -60,7 +60,7 @@ export function ComingSoonModal({ isOpen, onClose }: ComingSoonModalProps) {
 
           {/* Button */}
           <a
-            href="https://chat.whatsapp.com/GGlhZnA46a8Hbmd4fXbdr6"
+            href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-block w-full"

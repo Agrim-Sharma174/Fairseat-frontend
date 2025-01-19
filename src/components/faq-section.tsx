@@ -125,7 +125,7 @@ export default function FAQSection() {
                 </p>
 
                 <Link
-                  href="https://chat.whatsapp.com/GGlhZnA46a8Hbmd4fXbdr6"
+                  href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
                   target="_blank"
                   rel="noopener noreferrer"
                   className={`
