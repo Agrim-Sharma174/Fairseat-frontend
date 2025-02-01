@@ -1,48 +1,48 @@
-"use client";
+"use client"
 
-import { Fira_Code, Montserrat, Raleway } from "next/font/google";
-import React, { useState } from "react";
-import Image from "next/image";
-import { TicketCard } from "./ticket-card";
-import logo from "../../public/Logo.svg";
-import logoLayer from "../../public/logolayer.svg";
-import { MenuIcon, XIcon } from "lucide-react";
-import Link from "next/link";
+import { Fira_Code, Montserrat, Raleway } from "next/font/google"
+import { useState } from "react"
+import Image from "next/image"
+import { TicketCard } from "./ticket-card"
+import logo from "../../public/Logo.svg"
+import logoLayer from "../../public/logolayer.svg"
+import { MenuIcon, XIcon } from "lucide-react"
+import Link from "next/link"
 
 const montserrat = Montserrat({
   subsets: ["latin"],
   weight: ["100", "200", "300", "400", "500", "600", "700"],
-});
+})
 
 const raleway = Raleway({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
+})
 
 const firaCode = Fira_Code({
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
-});
+})
 
 export function HeroSection() {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false)
 
   const scrollToSection = (sectionId: string) => {
-    const section = document.getElementById(sectionId);
+    const section = document.getElementById(sectionId)
     if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-      setIsMenuOpen(false);
+      section.scrollIntoView({ behavior: "smooth" })
+      setIsMenuOpen(false)
     }
-  };
+  }
 
   return (
     <div className="min-h-screen overflow-x-hidden">
       {/* Responsive Navigation */}
       <nav className="fixed top-0 left-0 w-full mx-auto px-4 sm:px-8 lg:px-12 py-4 z-[100] flex items-center justify-between bg-gray-500/10 backdrop-blur-3xl">
         <div className="flex gap-2 items-center">
-          <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
+          <Image src={logo || "/placeholder.svg"} alt="FairSeat Logo" width={30} height={30} />
           <Image
-            src={logoLayer}
+            src={logoLayer || "/placeholder.svg"}
             alt="FairSeat Logo"
             width={120}
             height={30}
@@ -51,15 +51,8 @@ export function HeroSection() {
         </div>
 
         {/* Mobile Menu Button */}
-        <button
-          className="lg:hidden"
-          onClick={() => setIsMenuOpen((prev) => !prev)}
-        >
-          {isMenuOpen ? (
-            <XIcon className="h-6 w-6 text-white" />
-          ) : (
-            <MenuIcon className="h-6 w-6 text-white" />
-          )}
+        <button className="lg:hidden" onClick={() => setIsMenuOpen((prev) => !prev)}>
+          {isMenuOpen ? <XIcon className="h-6 w-6 text-white" /> : <MenuIcon className="h-6 w-6 text-white" />}
         </button>
 
         {/* Desktop Navigation */}
@@ -76,20 +69,11 @@ export function HeroSection() {
           >
             Features
           </button>
-          <button
-            onClick={() => scrollToSection("faq-section")}
-            className="text-white/70 hover:text-[#60C9DD] text-sm"
-          >
+          <button onClick={() => scrollToSection("faq-section")} className="text-white/70 hover:text-[#60C9DD] text-sm">
             FAQs
           </button>
-          <a
-            href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-[#0497AA] text-white px-6 py-1.5 rounded-full text-sm hover:bg-cyan-500">
-              Join
-            </button>
+          <a href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f" target="_blank" rel="noopener noreferrer">
+            <button className="bg-[#0497AA] text-white px-6 py-1.5 rounded-full text-sm hover:bg-cyan-500">Join</button>
           </a>
         </div>
       </nav>
@@ -115,14 +99,8 @@ export function HeroSection() {
           >
             FAQs
           </button>
-          <a
-            href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <button className="bg-[#0497AA] text-white px-6 py-2 rounded-full text-lg hover:bg-cyan-500">
-              Join
-            </button>
+          <a href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f" target="_blank" rel="noopener noreferrer">
+            <button className="bg-[#0497AA] text-white px-6 py-2 rounded-full text-lg hover:bg-cyan-500">Join</button>
           </a>
         </div>
       )}
@@ -134,11 +112,7 @@ export function HeroSection() {
           <div className="flex justify-center mb-4">
             <div className="inline-flex items-center px-4 py-1.5 rounded-3xl bg-gradient-to-r from-[#0497AA]/20 to-[#60C9DD]/20 border border-[#60C9DD]/30 backdrop-blur-sm">
               <div className="w-2 h-2 rounded-full bg-red-600 animate-pulse mr-2" />
-              <span
-                className={`${firaCode.className} text-[#60C9DD] text-sm font-medium`}
-              >
-                Coming Soon
-              </span>
+              <span className={`${firaCode.className} text-[#60C9DD] text-sm font-medium`}>Coming Soon</span>
             </div>
           </div>
 
@@ -147,29 +121,49 @@ export function HeroSection() {
           >
             Fair Tickets, Real Fans
           </h1>
-          <h2
-            className={`${montserrat.className} text-xl sm:text-2xl lg:text-4xl font-medium text-white/80`}
-          >
+          <h2 className={`${montserrat.className} text-xl sm:text-2xl lg:text-4xl font-medium text-white/80`}>
             Revolutionizing Ticketing with Blockchain
           </h2>
-          <p
-            className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}
-          >
-            FairSeat puts real fans back in control with blockchain technology,
-            ensuring every ticket is fair, transparent, and secure. Because the
-            spotlight belongs to you.
+          <p className={`${raleway.className} font-normal text-white/70 max-w-3xl mx-auto text-lg sm:text-base`}>
+            FairSeat puts real fans back in control with blockchain technology, ensuring every ticket is fair,
+            transparent, and secure. Because the spotlight belongs to you.
           </p>
-          <button
-            className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all`}
-          >
-            <Link
-              href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Join Our Community
-            </Link>
-          </button>
+
+          {/* New buttons with descriptions */}
+          <div className="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-4">
+            <div className="flex flex-col items-center">
+              <Link
+                href="https://whatsapp.com/channel/0029VayNajh5fM5VAT6hk40f"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className={`${firaCode.className} rounded-full bg-[#0497AA] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-500 transition-all mb-2`}
+                >
+                  Join as Early User
+                </button>
+              </Link>
+              <p className={`${raleway.className} text-xs text-white/60 max-w-[200px]`}>
+                Get exclusive benefits by joining our community early
+              </p>
+            </div>
+            <div className="flex flex-col items-center">
+              <Link
+                href="https://api.whatsapp.com/send/?phone=7973521148&text=Hi%2C+I+am+interested+in+FairSeat+details%21&type=phone_number&app_absent=0"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <button
+                  className={`${firaCode.className} rounded-full bg-[#60C9DD] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-400 transition-all mb-2`}
+                >
+                  Contact as Organizer
+                </button>
+              </Link>
+              <p className={`${raleway.className} text-xs text-white/60 max-w-[200px]`}>
+                Interested in using FairSeat? Let's talk!
+              </p>
+            </div>
+          </div>
         </div>
 
         {/* Responsive Ticket Cards */}
@@ -189,5 +183,6 @@ export function HeroSection() {
         </div>
       </div>
     </div>
-  );
+  )
 }
+
