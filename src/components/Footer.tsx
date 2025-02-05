@@ -57,7 +57,7 @@ export default function Footer() {
               className={`${firaCode.className} bg-[#0497AA] hover:bg-cyan-600 text-white rounded-full px-6 w-full sm:w-auto font-medium text-sm`}
               onClick={() =>
                 window.open(
-                  "https://wa.me/7973521148?text=Hi,%20I%20am%20interested%20in%20FairSeat%20details!",
+                  "https://forms.gle/UE4YmZTyKoi1GM4J8",
                   "_blank"
                 )
               }

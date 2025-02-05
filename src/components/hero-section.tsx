@@ -149,12 +149,12 @@ export function HeroSection() {
             </div>
             <div className="flex flex-col items-center">
               <Link
-                href="https://api.whatsapp.com/send/?phone=7973521148&text=Hi%2C+I+am+interested+in+FairSeat+details%21&type=phone_number&app_absent=0"
+                href="https://forms.gle/UE4YmZTyKoi1GM4J8"
                 target="_blank"
                 rel="noopener noreferrer"
               >
                 <button
-                  className={`${firaCode.className} rounded-full bg-[#60C9DD] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-white hover:bg-cyan-400 transition-all mb-2`}
+                  className={`${firaCode.className} rounded-full bg-[#60C9DD] px-6 sm:px-8 py-2 sm:py-3 text-base sm:text-lg font-medium text-black hover:bg-cyan-400 transition-all mb-2`}
                 >
                   Contact as Organizer
                 </button>
