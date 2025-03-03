@@ -19,6 +19,7 @@ import concert_pic from "../../../public/concert_pic.jpeg";
 import concert_crowd_pic from "../../../public/concert_crowd_pic.jpeg";
 import logo from "../../../public/Logo.svg";
 import logoLayer from "../../../public/logolayer.svg";
+import LoadingAnimation from "@/components/LoadingAnimation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -209,14 +210,7 @@ export default function Dashboard() {
   }, [searchTerm, dateFilter, priceFilter, typeFilter]);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full bg-cyan-500/30 mb-4"></div>
-          <div className="text-cyan-400 text-xl">Loading events...</div>
-        </div>
-      </div>
-    );
+    return <LoadingAnimation />;
   }
 
   return (
@@ -225,7 +219,7 @@ export default function Dashboard() {
       <header className="border-b border-gray-800 bg-gray-900/80 backdrop-blur-lg sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4 flex justify-between items-center">
           <Link href={"/"}>
-            <div className="flex gap-2 items-center justify-center sm:justify-start">
+            <div className="flex gap-2 items-center justify-center sm:justify-start scale-75">
               <Image src={logo} alt="FairSeat Logo" width={30} height={30} />
               <Image
                 src={logoLayer}
@@ -238,7 +232,7 @@ export default function Dashboard() {
 
           <div className="flex items-center gap-4">
             <Link href="/organizer/dashboard">
-              <button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl transition-all">
+              <button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white text-xs px-1 py-1 md:text-base md:px-6 md:py-3 rounded-xl transition-all">
                 <span className={`${firaCode.className}`}>
                   Organizer Dashboard
                 </span>
@@ -278,7 +272,7 @@ export default function Dashboard() {
         </div>
 
         {/* Filters */}
-        <div className="bg-gray-800/50 backdrop-blur-md p-4 rounded-full mb-8 border border-gray-700 -translate-y-44 z-[1000] mx-10">
+        <div className="bg-gray-800/50 backdrop-blur-md p-4 rounded-lg md:rounded-full mb-8 border border-gray-700 md:-translate-y-44 z-[1000] md:mx-10">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-4 ">
             {/* Search */}
             <div className="relative">
@@ -289,7 +283,7 @@ export default function Dashboard() {
               <input
                 type="text"
                 placeholder="Search events..."
-                className="w-full bg-gray-700/50 border border-gray-600 rounded-full py-3 pl-10 pr-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-full bg-gray-700/50 border border-gray-600 rounded-lg md:rounded-full py-3 pl-10 pr-4 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 value={searchTerm}
                 onChange={(e) => setSearchTerm(e.target.value)}
               />
@@ -301,7 +295,7 @@ export default function Dashboard() {
                 <Calendar size={18} />
               </div>
               <select
-                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-lg md:rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 value={dateFilter}
                 onChange={(e) => setDateFilter(e.target.value)}
               >
@@ -323,7 +317,7 @@ export default function Dashboard() {
                 <DollarSign size={18} />
               </div>
               <select
-                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-lg md:rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 value={priceFilter}
                 onChange={(e) => setPriceFilter(e.target.value)}
               >
@@ -345,7 +339,7 @@ export default function Dashboard() {
                 <Music size={18} />
               </div>
               <select
-                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
+                className="w-full appearance-none bg-gray-700/50 border border-gray-600 rounded-lg md:rounded-full py-3 pl-10 pr-10 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                 value={typeFilter}
                 onChange={(e) => setTypeFilter(e.target.value)}
               >

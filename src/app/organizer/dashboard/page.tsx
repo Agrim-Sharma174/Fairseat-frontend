@@ -21,6 +21,7 @@ import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 import logo from "../../../../public/Logo.svg";
 import logoLayer from "../../../../public/logolayer.svg";
 import event_pic from "../../../../public/concert_pic.jpeg";
+import LoadingAnimation from "@/components/LoadingAnimation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -174,14 +175,7 @@ export default function OrganizerDashboard() {
   }, 0);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full bg-cyan-500/30 mb-4"></div>
-          <div className="text-cyan-400 text-xl">Loading dashboard...</div>
-        </div>
-      </div>
-    );
+    return <LoadingAnimation />;
   }
 
   return (
@@ -236,14 +230,14 @@ export default function OrganizerDashboard() {
           </div>
           <div className="flex gap-4">
             <Link href="/organizer/scanner">
-              <button className="flex items-center gap-2 bg-purple-600 hover:bg-purple-700 text-white px-6 py-3 rounded-xl transition-all">
+              <button className="flex items-center gap-1 bg-purple-600 hover:bg-purple-700 text-white text-sm px-3 py-2 md:text-base md:px-6 md:py-3 rounded-xl transition-all">
                 <QrCode size={20} />
                 <span className={`${firaCode.className}`}>Scan QR</span>
               </button>
             </Link>
             <Link
               href="/organizer/create-event"
-              className="flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white px-6 py-3 rounded-xl transition-all self-start md:self-center"
+              className="flex items-center gap-2 bg-gradient-to-r from-cyan-600 to-cyan-500 hover:from-cyan-700 hover:to-cyan-600 text-white text-sm px-3 py-2 md:text-base md:px-6 md:py-3 rounded-xl transition-all self-start md:self-center"
             >
               <Plus size={20} />
               <span className={`${firaCode.className}`}>Create New Event</span>

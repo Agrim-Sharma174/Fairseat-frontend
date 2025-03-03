@@ -269,9 +269,9 @@ export default function CreateEvent() {
                           onChange={handleInputChange}
                           className="w-full bg-gray-700/50 border border-gray-600 rounded-xl py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        {/* <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                           <Calendar size={18} className="text-gray-400" />
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 
@@ -292,9 +292,9 @@ export default function CreateEvent() {
                           onChange={handleInputChange}
                           className="w-full bg-gray-700/50 border border-gray-600 rounded-xl py-3 px-4 text-white focus:outline-none focus:ring-2 focus:ring-cyan-500 focus:border-transparent"
                         />
-                        <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                        {/* <div className="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
                           <Clock size={18} className="text-gray-400" />
-                        </div>
+                        </div> */}
                       </div>
                     </div>
 

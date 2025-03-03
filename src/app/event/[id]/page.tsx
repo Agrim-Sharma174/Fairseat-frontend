@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import { Fira_Code, Montserrat, Raleway } from "next/font/google";
 import event_pic from "../../../../public/event_pic.jpeg";
+import LoadingAnimation from "@/components/LoadingAnimation";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -214,14 +215,7 @@ export default function EventDetail() {
     .slice(0, 3);
 
   if (isLoading) {
-    return (
-      <div className="min-h-screen bg-gray-900 flex items-center justify-center">
-        <div className="animate-pulse flex flex-col items-center">
-          <div className="w-12 h-12 rounded-full bg-cyan-500/30 mb-4"></div>
-          <div className="text-cyan-400 text-xl">Loading event details...</div>
-        </div>
-      </div>
-    );
+    return <LoadingAnimation />;
   }
 
   if (!event) {
